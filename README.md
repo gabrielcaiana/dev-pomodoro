@@ -1,5 +1,11 @@
 # Pomodoro Dev
 
+### Para visualizar o protótipo do projeto [clique aqui](https://www.figma.com/file/JU0OhDmVaO4tkNpOlTKIAX/Gabriel-Caiana---Dev-Pomodoro?node-id=1%3A772)
+
+### Preview
+
+![Pomodoro](./static/preview.png)
+
 ## Build Setup
 
 ```bash
