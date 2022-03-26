@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <h1 class="font-general-variable text-red-500">Hello world</h1>
+  <div>
+    <h1 class="font-general-bold bg-background text-primary">Hello world</h1>
     <i data-feather="arrow-right-circle"></i>
   </div>
 </template>
