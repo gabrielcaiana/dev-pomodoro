@@ -1,5 +1,7 @@
 <template>
-  <Tutorial />
+  <div class="container">
+    <h1 class="text-red-500">Hello world</h1>
+  </div>
 </template>
 
 <script lang="ts">
