@@ -1,7 +1,7 @@
 <template>
   <button
     class="base-button font-general-bold"
-    :class="{ small: smallButton }"
+    :class="{ small: smallButton, transparent: transparent }"
     v-on="$listeners"
   >
     <slot></slot>
@@ -16,7 +16,12 @@ export default Vue.extend({
 
   props: {
     small: {
-      type: String,
+      type: Boolean,
+      default: null,
+    },
+
+    transparent: {
+      type: Boolean,
       default: null,
     },
   },
@@ -38,5 +43,9 @@ export default Vue.extend({
 
 .small {
   @apply h-8;
+}
+
+.transparent {
+  background: transparent;
 }
 </style>
