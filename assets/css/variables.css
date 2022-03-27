@@ -7,6 +7,8 @@
     #406aff 117.04%
   );
 
+  --gradient-text: linear-gradient(272.38deg, #43a5e3 46.06%, #ff56f6 81.53%);
+
   --gradient-card: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.1) -1.52%,
