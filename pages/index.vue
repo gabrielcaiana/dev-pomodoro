@@ -1,13 +1,16 @@
 <template>
   <div class="bg-background h-screen">
+    <div class="container m-auto p-14">
+      <AppHeader />
+    </div>
     <!-- BaseIcon -->
-    <BaseIcon name="arrow-right-circle" size="64" color="blue" />
+    <!-- <BaseIcon name="arrow-right-circle" size="64" color="blue" /> -->
 
     <!-- BaseButton -->
-    <BaseButton :small="true" :transparent="true"> hello world</BaseButton>
+    <!-- <BaseButton :small="true" :transparent="true"> hello world</BaseButton> -->
 
     <!-- BaseCard -->
-    <BaseCard> hello world </BaseCard>
+    <!-- <BaseCard> hello world </BaseCard> -->
   </div>
 </template>
 
