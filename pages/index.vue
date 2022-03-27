@@ -2,15 +2,19 @@
   <div class="bg-background h-screen">
     <div class="container m-auto p-14">
       <AppHeader />
+      <main>
+        <div class="flex gap-10 mt-10">
+          <div class="w-full flex">
+            <BaseCard></BaseCard>
+          </div>
+
+          <div class="w-full flex flex-col gap-10">
+            <BaseCard></BaseCard>
+            <ChallengesCompleted />
+          </div>
+        </div>
+      </main>
     </div>
-    <!-- BaseIcon -->
-    <!-- <BaseIcon name="arrow-right-circle" size="64" color="blue" /> -->
-
-    <!-- BaseButton -->
-    <!-- <BaseButton :small="true" :transparent="true"> hello world</BaseButton> -->
-
-    <!-- BaseCard -->
-    <!-- <BaseCard> hello world </BaseCard> -->
   </div>
 </template>
 
