@@ -9,7 +9,9 @@
           </div>
 
           <div class="w-full flex flex-col gap-10">
-            <BaseCard></BaseCard>
+            <BaseCard>
+              <ProgressBar />
+            </BaseCard>
             <ChallengesCompleted />
           </div>
         </div>
