@@ -28,6 +28,7 @@ export interface State {
 }
 
 export interface Getters {
+  currentLevel: (state: State) => number
   allChallenges: (state: State) => []
   challengeLength: (state: State) => number
   currentXpPercentage: (state: State) => number
