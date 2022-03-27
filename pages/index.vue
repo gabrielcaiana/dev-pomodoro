@@ -1,7 +1,15 @@
 <template>
-  <div>
-    <h1 class="font-general-bold bg-background text-primary">Hello world</h1>
-    <i data-feather="arrow-right-circle"></i>
+  <div class="bg-background h-screen">
+    <!-- BaseIcon -->
+    <BaseIcon name="arrow-right-circle" size="64" color="blue" />
+
+    <!-- BaseButton -->
+    <BaseButton :small="true" :transparent="true" @click="hello">
+      hello world</BaseButton
+    >
+
+    <!-- BaseCard -->
+    <BaseCard> hello world </BaseCard>
   </div>
 </template>
 
@@ -10,5 +18,11 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'IndexPage',
+
+  methods: {
+    hello() {
+      console.log('hello world')
+    },
+  },
 })
 </script>
