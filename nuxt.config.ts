@@ -1,5 +1,4 @@
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Dev Pomodoro',
     meta: [
@@ -11,34 +10,44 @@ export default {
     link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/css/fonts.css',
     '~/assets/css/tailwind.css',
     '~/assets/css/variables.css',
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ['~/plugins/featherIcons'],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: [{ path: '@/components', pathPrefix: false }],
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     ['cookie-universal-nuxt', { alias: 'cookies' }],
+    '@nuxtjs/firebase',
   ],
 
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
+  firebase: {
+    config: {
+      apiKey: process.env.FIREBASE_API_KEY,
+      authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+      projectId: process.env.FIREBASE_PROJECT_ID,
+      storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+      appId: process.env.FIREBASE_APP_ID,
+      measurementId: process.env.MEASUREMENT_ID,
+    },
+    services: {
+      firestore: true,
+      analytics: true,
+    },
+  },
+
   pwa: {
     manifest: {
       lang: 'en',
