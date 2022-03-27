@@ -1,5 +1,5 @@
 <template>
-  <header class="app-header text-white">
+  <header class="app-header flex justify-between items-center text-white">
     <div>
       <h1 class="app-header-title font-general-bold">
         <span>Dev</span> Pomodoro
@@ -9,6 +9,8 @@
         utilizando o dev pomodoro
       </p>
     </div>
+
+    <AppAvatar />
   </header>
 </template>
 
