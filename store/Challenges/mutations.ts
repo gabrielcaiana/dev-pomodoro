@@ -4,9 +4,15 @@ export default {
   [Mutations.SET_CURRENT_CHALLENGE_INDEX](state, index) {
     state.currentChallengeIndex = index
   },
+
+  [Mutations.SET_ALL_CHALLENGES](state, challenges) {
+    state.allChallenges = challenges
+  },
+
   [Mutations.SET_IS_LEVEL_UP_MODAL_OPEN](state, flag) {
     state.isLevelUpModalOpen = flag
   },
+
   [Mutations.COMPLETE_CHALLENGE](state, xpAmount) {
     const { current, end } = state.xp
     const currentTotalXp = current + xpAmount

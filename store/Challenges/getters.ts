@@ -1,6 +1,8 @@
 import { Getters } from './types'
 
 export default {
+  allChallenges: (state) => state.allChallenges,
+
   challengeLength: (state) => state.allChallenges.length,
 
   currentXpPercentage: (state) =>
