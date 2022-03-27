@@ -7,7 +7,7 @@
 
       <div class="w-full flex flex-col gap-10">
         <BaseCard>
-          <ProgressBar />
+          <ExperienceBar />
         </BaseCard>
         <ChallengesCompleted />
       </div>
