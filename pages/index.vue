@@ -2,6 +2,7 @@
   <div class="bg-background h-screen">
     <div class="container m-auto p-14">
       <AppHeader />
+
       <main>
         <div class="flex gap-10 mt-10">
           <div class="w-full flex">
@@ -16,6 +17,8 @@
           </div>
         </div>
       </main>
+
+      <AppFooter />
     </div>
   </div>
 </template>
