@@ -5,6 +5,8 @@ export default {
 
   allChallenges: (state) => state.allChallenges,
 
+  getCompletedChallenges: (state) => state.completetedChallenge,
+
   challengeLength: (state) => state.allChallenges.length,
 
   currentXpPercentage: (state) =>

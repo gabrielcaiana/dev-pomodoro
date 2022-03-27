@@ -33,6 +33,7 @@ export interface Getters {
   challengeLength: (state: State) => number
   currentXpPercentage: (state: State) => number
   currentChallenge: (state: State) => Challenge | null
+  getCompletedChallenges: (state: State) => number
 }
 
 export enum Mutations {
