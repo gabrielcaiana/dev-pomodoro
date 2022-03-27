@@ -15,6 +15,6 @@ export default Vue.extend({
 <style scoped>
 .base-card {
   background: var(--gradient-card);
-  border: 1px solid #ffffff65;
+  border: 2px solid #ffffff65;
 }
 </style>
