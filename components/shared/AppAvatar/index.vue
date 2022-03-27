@@ -12,7 +12,15 @@
       />
 
       <div
-        class="app-avatar-badge rounded-full absolute flex justify-center items-center font-general-bold"
+        v-tooltip.bottom="{
+          content: `Level ${userLevel}`,
+          classes: ['tooltip'],
+          delay: {
+            show: 200,
+            hide: 200,
+          },
+        }"
+        class="app-avatar-badge rounded-full absolute flex justify-center items-center font-general-bold cursor-pointer"
       >
         {{ userLevel }}
       </div>

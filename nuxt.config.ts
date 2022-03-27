@@ -16,7 +16,7 @@ export default {
     '~/assets/css/variables.css',
   ],
 
-  plugins: ['~/plugins/featherIcons'],
+  plugins: ['~/plugins/featherIcons', '~/plugins/v-tooltip'],
 
   components: [{ path: '@/components', pathPrefix: false }],
 
