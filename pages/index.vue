@@ -38,5 +38,19 @@ export default Vue.extend({
       console.log(error)
     }
   },
+
+  head() {
+    return {
+      title: 'Bem vindo ao Dev pomodoro',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'O dev pomodoro é sua plataforma de produtividade para te auxiliar no dia a dia.',
+        },
+      ],
+    }
+  },
 })
 </script>
