@@ -1,15 +1,6 @@
 <template>
-  <header class="app-header flex justify-between items-center text-white">
-    <div>
-      <h1 class="app-header-title font-general-bold">
-        <span>Dev</span> Pomodoro
-      </h1>
-      <p class="font-general-italic text-xl">
-        Gerencie seu tempo e seja mais produtivo <br />
-        utilizando o dev pomodoro
-      </p>
-    </div>
-
+  <header class="flex justify-between items-center text-white">
+    <AppLogo />
     <AppAvatar />
   </header>
 </template>
@@ -20,11 +11,3 @@ export default Vue.extend({
   name: 'AppHeader',
 })
 </script>
-
-<style lang="css" scoped>
-.app-header-title span {
-  background: var(--gradient-text);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-</style>
