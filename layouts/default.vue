@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-background">
+  <div class="bg-background h-screen">
     <div class="container m-auto p-14">
       <AppHeader />
       <Nuxt />
