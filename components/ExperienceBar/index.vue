@@ -2,19 +2,40 @@
   <div>
     <span class="font-general-medium text-white text-xl">Meu progresso</span>
     <div class="text-white flex items-center justify-between mt-6">
-      <span>20xp</span>
+      <span v-text="`${getExperience.start}xp`"></span>
       <div class="progress-bar">
-        <div class="progress"></div>
+        <div
+          v-if="showPercentage"
+          class="progress"
+          :style="{ width: `${currentXpPercentage}%` }"
+        >
+          <span
+            v-if="showPercentage"
+            v-text="`${getExperience.current}xp (${currentXpPercentage}%)`"
+          ></span>
+        </div>
       </div>
-      <span>64xp</span>
+      <span v-text="`${getExperience.end}xp`"></span>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import { mapGetters } from 'vuex'
 import Vue from 'vue'
 export default Vue.extend({
   name: 'ExperienceBar',
+
+  computed: {
+    ...mapGetters({
+      currentXpPercentage: 'Challenges/currentXpPercentage',
+      getExperience: 'Challenges/getExperience',
+    }),
+
+    showPercentage() {
+      return this.currentXpPercentage > 0
+    },
+  },
 })
 </script>
 
@@ -32,5 +53,17 @@ export default Vue.extend({
   height: 100%;
   width: 40%;
   border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0.5rem;
+  position: relative;
+}
+
+.progress span {
+  position: absolute;
+  top: 25px;
+  font-size: 0.875rem;
+  width: max-content;
 }
 </style>

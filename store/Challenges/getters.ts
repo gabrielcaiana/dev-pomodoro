@@ -3,14 +3,18 @@ import { Getters } from './types'
 export default {
   currentLevel: (state) => state.level,
 
+  getExperience: (state) => state.xp,
+
   allChallenges: (state) => state.allChallenges,
 
   getCompletedChallenges: (state) => state.completetedChallenge,
 
   challengeLength: (state) => state.allChallenges.length,
 
-  currentXpPercentage: (state) =>
-    Number(((state.xp.current / state.xp.end) * 100).toFixed(2)),
+  currentXpPercentage: (state) => {
+    const percentage = (state.xp.current / state.xp.end) * 100
+    return Number(percentage.toFixed(2))
+  },
 
   currentChallenge: (state) =>
     typeof state.currentChallengeIndex === 'number'
