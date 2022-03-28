@@ -1,8 +1,7 @@
 <template>
   <BaseCard>
-    <h2 class="font-general-regular text-white">
-      conclua os ciclos para receber novos desafios
-    </h2>
+    <AppSubtitle>conclua os ciclos para receber novos desafios</AppSubtitle>
+
     <div class="flex justify-between text-white font-general-light-italic mt-4">
       <span>Concluídos</span>
       <span v-text="completetedChallenge"></span>

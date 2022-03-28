@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span class="font-general-medium text-white text-xl">Meu progresso</span>
+    <AppSubtitle>Meu progresso</AppSubtitle>
     <div class="text-white flex items-center justify-between mt-6">
       <span v-text="`${getExperience.start}xp`"></span>
       <div class="progress-bar">
