@@ -1,7 +1,12 @@
 <template>
   <button
+    :class="{
+      small: smallButton,
+      transparent: transparent,
+      negative: negative,
+      disabled: disabled,
+    }"
     class="base-button font-general-bold w-full text-white text-2xl px-1 py-8 hover:opacity-90 transition-all duration-300 rounded-md flex items-center justify-center"
-    :class="{ small: smallButton, transparent: transparent }"
     v-on="$listeners"
   >
     <slot></slot>
@@ -23,6 +28,16 @@ export default Vue.extend({
     transparent: {
       type: Boolean,
       default: null,
+    },
+
+    negative: {
+      type: Boolean,
+      default: false,
+    },
+
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
 
@@ -46,5 +61,15 @@ export default Vue.extend({
 
 .transparent {
   background: transparent;
+}
+
+.negative {
+  background: #fc6b6b;
+}
+
+.disabled {
+  background: #d0d0d0;
+  cursor: not-allowed;
+  border: none;
 }
 </style>
