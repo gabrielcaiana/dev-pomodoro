@@ -2,7 +2,20 @@
   <main>
     <div class="flex gap-10 mt-10">
       <div class="w-full flex">
-        <BaseCard></BaseCard>
+        <BaseCard>
+          <Countdown @complete="getNewChallenge" />
+          <BaseButton v-if="hasCountdownComplete" disabled
+            >Ciclo completado</BaseButton
+          >
+          <BaseButton
+            v-else-if="isCountdownActive"
+            @click="setCountdownState(false)"
+            >Abandonar Ciclo</BaseButton
+          >
+          <BaseButton v-else @click="setCountdownState(true)"
+            >Iniciar Ciclo</BaseButton
+          >
+        </BaseCard>
       </div>
 
       <div class="w-full flex flex-col gap-10">
@@ -17,27 +30,15 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapState, mapMutations } from 'vuex'
+import { Mutations as MutationsCountdown } from '~/store/Countdown/types'
+import { playAudio, sendNotification } from '~/utils/index'
+import getChallenges from '~/mixins/get-challenges'
 
 export default Vue.extend({
   name: 'IndexPage',
 
-  async asyncData({ app, store }) {
-    try {
-      const db = app.$fire.firestore
-      const placeRef = db.collection('challenges')
-      const snapshot = await placeRef.get()
-
-      const items = snapshot.docs.map((doc: any) => {
-        const item = doc.data()
-        item.id = doc.id
-        return item
-      })
-
-      store.commit('Challenges/SET_ALL_CHALLENGES', items)
-    } catch (error) {
-      console.log(error)
-    }
-  },
+  mixins: [getChallenges],
 
   head() {
     return {
@@ -51,6 +52,43 @@ export default Vue.extend({
         },
       ],
     }
+  },
+
+  computed: {
+    ...mapState('Countdown', {
+      hasCountdownComplete: 'hasCompleted',
+      isCountdownActive: 'isActive',
+    }),
+  },
+
+  mounted() {
+    if ('Nofitication' in window) {
+      Notification.requestPermission()
+    }
+  },
+
+  methods: {
+    ...mapMutations({
+      setCountdownHasCompleted: `Countdown/${MutationsCountdown.SET_HAS_COMPLETED}`,
+      setCountdownIsActive: `Countdown/${MutationsCountdown.SET_IS_ACTIVE}`,
+    }),
+
+    setCountdownState(flag: boolean) {
+      this.setCountdownHasCompleted(false)
+      this.setCountdownIsActive(flag)
+    },
+
+    getNewChallenge() {
+      this.setCountdownHasCompleted(true)
+
+      if (Notification?.permission === 'granted') {
+        playAudio('/completed-challenge.mp3')
+        sendNotification('Novo desafio', {
+          body: 'Você iniciou um novo desafio',
+          icon: '/favicon.png',
+        })
+      }
+    },
   },
 })
 </script>
