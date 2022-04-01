@@ -1,8 +1,8 @@
 import { State } from './types'
-import { MINUTES } from '~/constants/index'
 
 export const state = (): State => ({
-  time: MINUTES * 60,
+  time: 25 * 60,
+  timeSelected: 25,
   isActive: false,
   hasCompleted: false,
 })
