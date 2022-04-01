@@ -1,5 +1,7 @@
 <template>
-  <i :height="size" :width="size" :data-feather="name" :stroke="color"></i>
+  <div v-on="$listeners">
+    <i :height="size" :width="size" :data-feather="name" :stroke="color"></i>
+  </div>
 </template>
 
 <script lang="ts">

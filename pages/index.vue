@@ -19,9 +19,10 @@
           <BaseButton
             v-else-if="isCountdownActive"
             :negative="true"
-            @click="setCountdownState(false)"
+            @click="showDialog"
             >Abandonar Ciclo</BaseButton
           >
+
           <BaseButton v-else @click="setCountdownState(true)"
             >Iniciar Ciclo</BaseButton
           >
@@ -34,6 +35,8 @@
         </BaseCard>
         <ChallengesCompleted />
       </div>
+
+      <CycleAbortModal />
     </div>
   </main>
 </template>
@@ -44,12 +47,13 @@ import { mapState, mapMutations } from 'vuex'
 import { Mutations as MutationsCountdown } from '~/store/Countdown/types'
 import { playAudio, sendNotification } from '~/utils'
 import getChallenges from '~/mixins/get-challenges'
+import abortDialog from '~/mixins/abortDialog'
 import { MINUTES } from '~/constants'
 
 export default Vue.extend({
   name: 'IndexPage',
 
-  mixins: [getChallenges],
+  mixins: [getChallenges, abortDialog],
 
   data() {
     return {
