@@ -6,6 +6,13 @@
 
 ![Pomodoro](./static/preview.png)
 
+### Features
+
+- [X] Visualizar o nível do usuário
+- [X] realizar ciclos de 25, 30 e 45 minutos
+- [ ] Avançar de nível conforme concluir ciclos e desafios
+- [ ] instalar um PWA
+
 ## Build Setup
 
 ```bash
