@@ -8,10 +8,10 @@
 
 ### Features
 
-- [X] Visualizar o nível do usuário
-- [X] realizar ciclos de 25, 30 e 45 minutos
+- [x] Visualizar o nível do usuário
+- [x] realizar ciclos de 25, 30 e 45 minutos
 - [ ] Avançar de nível conforme concluir ciclos e desafios
-- [X] instalar um PWA
+- [x] instalar um PWA
 - [ ] Login com o github
 
 ## Build Setup
