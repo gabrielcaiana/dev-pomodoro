@@ -18,14 +18,14 @@ export default Vue.extend({
 
   computed: {
     ...mapState('Countdown', ['time', 'isActive']),
-    ...mapGetters('Countdown', ['minutes', 'seconds']),
+    ...mapGetters('Countdown', ['minutes', 'seconds', 'timeSelected']),
   },
 
   watch: {
     isActive(newValue: boolean) {
       this.runCountdown(newValue)
 
-      if (!newValue) this.resetTime()
+      if (!newValue) this.resetTime(this.timeSelected)
     },
 
     time(newValue) {
