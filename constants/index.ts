@@ -1,1 +1,1 @@
-export const MINUTES = 25
+export const MINUTES: number[] = [25, 30, 45]
