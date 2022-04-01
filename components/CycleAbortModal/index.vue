@@ -1,6 +1,6 @@
 <template>
   <div v-if="show" class="overlay">
-    <div v-if="show" class="dialog text-white">
+    <div class="dialog text-white">
       <BaseIcon name="x" class="icon" @click="close" />
       <h3 class="font-2xl mb-2 font-general-bold">
         Você deseja cancelar o ciclo?
