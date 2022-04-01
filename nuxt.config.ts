@@ -51,7 +51,9 @@ export default {
 
   pwa: {
     manifest: {
-      lang: 'en',
+      name: 'Pomodoro Dev',
+      short_name: 'Pomodoro Dev',
+      lang: 'pt-BR',
     },
   },
 
