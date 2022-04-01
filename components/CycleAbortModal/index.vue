@@ -50,7 +50,6 @@ export default Vue.extend({
     },
 
     close() {
-      debugger
       this.show = false
     },
   },
