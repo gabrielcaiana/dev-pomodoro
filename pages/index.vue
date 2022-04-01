@@ -3,12 +3,13 @@
     <div class="flex gap-10 mt-10">
       <div class="w-full flex">
         <BaseCard>
-          <Countdown @complete="getNewChallenge" />
-          <BaseButton v-if="hasCountdownComplete" disabled
+          <Countdown @completed="getNewChallenge" />
+          <BaseButton v-if="hasCountdownComplete" :disabled="true"
             >Ciclo completado</BaseButton
           >
           <BaseButton
             v-else-if="isCountdownActive"
+            :negative="true"
             @click="setCountdownState(false)"
             >Abandonar Ciclo</BaseButton
           >
@@ -32,7 +33,7 @@
 import Vue from 'vue'
 import { mapState, mapMutations } from 'vuex'
 import { Mutations as MutationsCountdown } from '~/store/Countdown/types'
-import { playAudio, sendNotification } from '~/utils/index'
+import { playAudio, sendNotification } from '~/utils'
 import getChallenges from '~/mixins/get-challenges'
 
 export default Vue.extend({
@@ -62,7 +63,7 @@ export default Vue.extend({
   },
 
   mounted() {
-    if ('Nofitication' in window) {
+    if ('Notification' in window) {
       Notification.requestPermission()
     }
   },
@@ -83,7 +84,7 @@ export default Vue.extend({
 
       if (Notification?.permission === 'granted') {
         playAudio('/completed-challenge.mp3')
-        sendNotification('Novo desafio', {
+        sendNotification('Novo desafio!', {
           body: 'Você iniciou um novo desafio',
           icon: '/favicon.png',
         })
